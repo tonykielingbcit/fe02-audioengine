@@ -1,0 +1,14 @@
+@use "variables" as *;
+
+footer {
+    // whatever we need about footer goes in here 
+    
+    
+    // it can be removed ...
+    background-color: $footer-background-color;
+    border: 5px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

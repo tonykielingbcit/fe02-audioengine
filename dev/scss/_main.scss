@@ -1,0 +1,18 @@
+@use "variables" as *;
+
+main {
+    // whatever we need about main goes in here...
+    
+    background-color: $main-background-color;
+    border: 5px solid red; ////////// remove this line
+}
+
+
+// it can be removed...
+main > section {
+    border: 1px solid lime;
+    font-weight: bold;
+    text-align: center;
+    height: percentage(1 / 8);
+
+}

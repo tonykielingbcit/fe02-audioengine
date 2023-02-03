@@ -1,0 +1,22 @@
+.container02 {
+    // whatever we need about container 02 goes in here...
+
+    
+    // it can be removed ...
+    color: red;
+    
+    .container {
+        background-color: lime;
+        height: 100%;
+        p {
+            margin: 0;
+            padding-top: 1rem;
+        }
+        &:hover {
+            background-color: gray;
+            color: black;
+            font-variant: small-caps;
+        }
+    }
+
+}

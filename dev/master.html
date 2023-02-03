@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AUTOMOBILE TEAM</title>
+
+	<!-- *** IMPORTANT *** PUT LINKS TO GOOGLE FONTS HERE -->
+	<!-- Put Google Fonts Here -->
+
+	<!-- end Google Fonts -->
+
+	<!-- *** IMPORTANT *** DO NOT DELETE OR EDIT THE NEXT LINE OF CODE - IT IS IMPORTANT FOR THE GULP BUILD PROCESS. SEE YOUR INSTRUCTOR FIRST IF YOU WANT TO EDIT OR DELETE THIS LINE -->
+	<link rel="stylesheet" href="styles/styles.css?cachebuster=1">
+
+	<!-- development purposes (ONLY for today) -->
+	<link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+	<header>
+		<!-- here goes header -->
+		<h1>HERE GOES HEADER</h1>
+	</header>
+
+
+	<main>
+		<!-- here goes all containers componentes of main -->
+		<section class="container01">
+			@@include("./components/container01.html")
+			<!-- <div class="container">
+				<p>This is container 01</p>
+			</div> -->
+		</section>
+
+		<section class="container02">
+			<div class="container">
+				<p>This is container 02</p>
+			</div>
+		</section>
+		
+		<section class="container03">
+			<!-- <p>This is container 03</p> -->
+			@@include("./components/container03.html")
+		</section>
+		
+		<section class="container04">
+			<p>This is container 04</p>
+		</section>
+		
+		<section class="container05">
+			<p>This is container 05</p>
+		</section>
+		
+		<section class="container06">
+			<p>This is container 06</p>
+		</section>
+		
+		<section class="container07">
+			<p>This is container 07</p>
+		</section>
+
+		<section class="container08">
+			<p>This is container 08</p>
+		</section>
+	</main>
+
+
+	<footer>
+		<!-- here goes footer componenet -->
+		<h1>This is the FOOTER</h1>
+
+	</footer>
+
+<!-- *** IMPORTANT *** If you do not require the jQuery Library then feel free to delete the next line -->
+<script src="scripts/libs/jquery/jquery-3.6.0.min.js"></script>
+<!-- *** IMPORTANT *** DO NOT DELETE OR EDIT THE NEXT LINE OF CODE - IT IS IMPORTANT FOR THE GULP BUILD PROCESS. SEE YOUR INSTRUCTOR FIRST IF YOU WANT TO EDIT OR DELETE THIS LINE -->
+<script src="scripts/script.min.js?cachebuster=1"></script>
+<!-- *** IMPORTANT *** DO NOT ADD ADDITIONAL SCRIPT LINKS HERE...If you want to add additional scripts simply save the script files to the "dev/scripts" directory (for your custom scripts) and the 'dev/scripts/libs' directory for any jQuery plugins or other JavaScript libraries and Gulp will concatenate and minify them into the "script.min.js" file above. See the project instructions for details -->	
+</body>
+</html>
