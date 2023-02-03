@@ -19,6 +19,7 @@ const cache = require("gulp-cache");
 const htmlMin = require("gulp-htmlmin");
 //const cssnano = require('cssnano');
 const fileinclude = require("gulp-file-include");
+const gulpRename = require("gulp-rename");
 
 
 // Dev / Build State
@@ -79,8 +80,12 @@ folders.webfontsDist = `${folders.dist}/${folders.webfonts}`;
 // File Paths
 const files = {};
 // HTML Files
-files.html = `${folders.dev}/**/*.html`;
-files.htmlDist = `${folders.dist}/**/*.html`;
+// files.html = `${folders.dev}/**/*.html`;
+files.html = `${folders.dev}/index.html`;
+files.htmlDist = `${folders.dist}/index.html`;
+files.masterHtml = `${folders.dev}/master.html`;
+// files.combinedHtml = `${folders.dev}/index.html`;
+files.components = `${folders.dev}/components/*.html`;
 // Sass Files
 files.sass = `${folders.dev}/${folders.sass}/**/*.scss`;
 // CSS Files
@@ -151,14 +156,20 @@ function jQueryTask(done) {
 // 1. Compresses the HTML files
 // 2. Copies the compressed HTML files to the dist folder
 function htmlCombine() {
-  return src(["master.html"])
+    return src("./dev/master.html")
       .pipe(
         fileinclude({
           prefix: "@@",
-          basepath: "./components",
+          basepath: "./dev",
         })
       )
-      .pipe(dest("./index.html"));
+      .pipe(dest("./dev/compiled"));
+}
+
+function copyIndexFile() {
+  return src("./dev/compiled/master.html")
+  .pipe(gulpRename("index.html"))
+  .pipe(dest("./dev/"));
 }
 
 function htmlTask() {
@@ -210,6 +221,7 @@ function watchTask() {
   });
   watch(files.sass, sassTask); // Watches the dev Sass directory (SCSS files only)
   watch(files.js).on("change", series(jsTask, browserSync.reload)); // Watches the dev JavaScript directory (JS files only)
+  watch(files.components).on("change", series(htmlCombine, copyIndexFile, browserSync.reload));
   watch(files.html).on("change", browserSync.reload); // Watches the dev folder (HTML files only)
 }
 
@@ -232,7 +244,14 @@ function cleanTask(done) {
 }
 
 // Default Task:
-exports.default = series(parallel(sassTask, jsTask), watchTask);
+exports.default = series(
+  htmlCombine,
+  copyIndexFile,
+  parallel(sassTask, jsTask),
+  watchTask
+);
+
+
 
 // Build Task:
 exports.build = series(
@@ -244,7 +263,3 @@ exports.build = series(
   cacheBustTask
 );
 
-exports.combine = series(
-  htmlCombine, 
-  htmlTask
-);
