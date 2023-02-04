@@ -105,3 +105,4 @@ dev/scripts/script.min.js.map
 *.swp
 *.vi
 *~
+dist
