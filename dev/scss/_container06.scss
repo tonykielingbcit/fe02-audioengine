@@ -47,8 +47,12 @@ $line-height: 2.2;
             .learn-more-button {
                 @include button-style;
                 width: 120px;
-                
+                &:hover {
+                    color: $button-color;
+                }
+
             }
+                
         }
     }
 }
