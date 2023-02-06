@@ -1,8 +1,148 @@
+@use "variables" as *;
+
+// mixin for the 3 buttons
+@mixin shop-button {
+    background-color: $button-color;
+    color: white;
+    border: $button-color;
+    border-radius: 6px;
+    padding: 0.7rem 1rem;
+    font-weight: 500;
+}
+
+@mixin starting-sub-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .container03 {
+    margin: 0;
+    padding: 0;
+    font-family: $fontFamily;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
 
+    p {
+        font-size: 40px;
+        font-weight: 300;
+        margin: 0 auto;
+    }
+
+    h3 {
+        font-size: 25px;
+        font-weight: 300;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sub-container01 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sub-container01-01 {
+        @include starting-sub-container();
+    }
     
+    button {
+        @include shop-button();
+    }
+    button::before {
+        content: "SHOP NOW";
+    }
+
+    .sub-container02 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sub-container02-01{
+        @include starting-sub-container();
+    }
+
+    img {
+        width: 50%;
+    }
+
+    .title-larger-screen {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    button {
+        margin-right: 1.5rem;
+    }
+    img {
+        margin-left: 1.5rem;
+    }
+}
 
 
+@media screen and (min-width: 640px) {
+    .container03 {
 
-    
+        button {
+            margin: 0;
+        }
+        .container {
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .title-fin-screen {
+            display: none;
+        }
+        .title-larger-screen {
+            display: block;
+        }
+        .sub-container01 {
+            display: flex;
+            flex-direction: column;
+        }
+        .sub-container01-01 {
+            flex-direction: column;
+        }
+        .sub-container02 {
+            flex-direction: row;
+        }
+        .sub-container02-01 {
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid red;
+        }
+        img {
+            width: 70%;
+            margin: 0;
+        }
+        h3 {
+            font-size: 18px;
+            margin-top: 0;
+            // margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .container03 {
+        margin: auto 2rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container03 {
+        margin: auto 6rem;
+    }
 }
