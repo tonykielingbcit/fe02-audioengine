@@ -1,32 +1,33 @@
 @use "variables" as *;
 
 body {
-    min-height: 100vh;
-    background-color: #303030;
-    display: flex;
-    justify-content: center;
-    
-    .wrapper {
-        display: grid;
-        grid-template: $header-height auto 2fr / 1fr;
-        grid-template-areas: 
-            "header"
-             "main"
-             "footer";
-        width: 100%;
-        max-width: 1420px;
-        background-color: white;
-    }
+  min-height: 100vh;
+  background-color: #303030;
+  display: flex;
+  justify-content: center;
 
-    header {
-        grid-area: header;
-    }
+  .wrapper {
+    display: grid;
+    grid-template: auto auto 2fr / 1fr;
+    //grid-template: $header-height auto 2fr / 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    width: 100%;
+    max-width: 1420px;
+    background-color: white;
+  }
 
-    main {
-        grid-area: main;
-    }
+  header {
+    grid-area: header;
+  }
 
-    footer {
-        grid-area: footer;
-    }
+  main {
+    grid-area: main;
+  }
+
+  footer {
+    grid-area: footer;
+  }
 }
