@@ -1,3 +1,21 @@
 .container01 {
+  width: 100vw;
+  height: 500px;
   border: 2px solid blue;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+
+  .banner-slide {
+    width: 80%;
+    border: 2px solid green;
+    background-color: yellow;
+    color: black;
+
+    .slick-prev {
+      background-color: orange;
+    }
+    .slick-dots {
+      background-color: pink;
+    }
+  }
 }
