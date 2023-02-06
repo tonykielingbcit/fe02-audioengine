@@ -22,15 +22,17 @@
       position: absolute;
       top: 20px;
       text-transform: uppercase;
-      text-shadow: 2px 2px white;
+      text-shadow: 1px 1px white;
       z-index: 1;
+      font-family: var.$fontFamily;
+      font-size: 2rem;
     }
 
     .play {
       position: absolute;
       color: var.$button-color;
       border: none;
-      font-size: 7rem;
+      font-size: 10rem;
       cursor: pointer;
       background-color: transparent;
       z-index: 3;
@@ -79,6 +81,16 @@
             width: 100%;
           }
         }
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    .video {
+      .title {
+        font-size: 3rem;
+      }
+      .play {
+        font-size: 15rem;
       }
     }
   }

@@ -107,6 +107,7 @@ header {
     height: 0;
     visibility: hidden;
     transition: height 0.3s ease;
+    font-family: var.$fontFamily;
     ul {
       padding: $li-margin * 1px;
     }
@@ -143,7 +144,7 @@ header {
 
   /* DESKTOP */
   // Edit the breakpoint
-  @media (min-width: 830px) {
+  @media (min-width: 768px) {
     .header {
       flex-wrap: nowrap;
       padding: 0;
