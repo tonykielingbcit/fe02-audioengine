@@ -1,8 +1,187 @@
+@use "variables" as var;
+
+$bg-color: black;
+$point-color: #fc851e;
+// Menu bar variables and function
+$bar-width: 43;
+$bar-height: 5;
+$bar-space: 12;
+@function menu-btn-height($height, $space) {
+  @return calc($height * 3 + $space * 2);
+}
+
+// Nav height
+$li-height: 50;
+$num-of-li: 6;
+$li-margin: 10;
+@function nav-height($height, $num-of-li) {
+  @return calc($height * $num-of-li + $li-margin * 2);
+}
+
 header {
+  .header * {
+    padding: 0;
+    margin: 0;
+  }
 
-    
+  .header {
+    background-color: $bg-color;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
+  .logo {
+    padding: 15px 0 7px 15px;
+    width: 200px;
+    img {
+      width: inherit;
+    }
+  }
 
+  .menu-btn {
+    position: fixed;
+    top: 0;
+    right: 0;
+    // menu-btn position
+    margin: 7px 20px;
+    cursor: pointer;
+    z-index: 2;
+    height: menu-btn-height($bar-height, $bar-space) * 1px;
+    display: flex;
+    align-items: center;
 
-    
+    %bar-style {
+      width: $bar-width * 1px;
+      height: $bar-height * 1px;
+      background-color: white;
+      position: relative;
+    }
+
+    .bar {
+      @extend %bar-style;
+    }
+
+    .bar::before {
+      @extend %bar-style;
+      content: "";
+      position: absolute;
+      top: $bar-space * -1px;
+      left: 0;
+    }
+
+    .bar::after {
+      @extend %bar-style;
+      content: "";
+      position: absolute;
+      top: $bar-space * 1px;
+      left: 0;
+    }
+  }
+
+  .show {
+    .bar {
+      background-color: transparent;
+      z-index: 2;
+    }
+
+    .bar:before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    .bar:after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+    .menu {
+      height: nav-height($li-height, $num-of-li) * 1px;
+      visibility: visible;
+      transition: height 0.3s ease;
+    }
+  }
+
+  .menu {
+    width: 100%;
+    color: white;
+    height: 0;
+    visibility: hidden;
+    transition: height 0.3s ease;
+    font-family: var.$fontFamily;
+    ul {
+      padding: $li-margin * 1px;
+    }
+    li {
+      list-style: none;
+      height: $li-height * 1px;
+      a {
+        padding-left: 20px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
+        width: 100%;
+        height: 100%;
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+      &:last-child {
+        display: flex;
+        justify-content: flex-start;
+        a {
+          width: inherit;
+          padding: none;
+          &:hover {
+            color: var.$button-color;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  /* DESKTOP */
+  // Edit the breakpoint
+  @media (min-width: 768px) {
+    .header {
+      flex-wrap: nowrap;
+      padding: 0;
+    }
+
+    .menu-btn {
+      display: none;
+    }
+
+    .menu {
+      visibility: visible;
+      width: inherit;
+      height: inherit;
+      background-color: transparent;
+      padding-right: 20px;
+      margin-left: 0;
+      position: static;
+      left: 0;
+      display: flex;
+      align-items: center;
+      ul {
+        display: flex;
+        padding: 0;
+
+        li {
+          a {
+            &:hover {
+              background-color: transparent;
+              color: var.$button-color;
+            }
+            &:active,
+            &:focus {
+              color: var.$button-color;
+            }
+          }
+        }
+      }
+    }
+  }
 }
