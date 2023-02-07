@@ -16,12 +16,11 @@
 }
 
 .container04 {
-    margin: 0 1rem;
+    margin: 2rem;
     // border: 2px solid red;
     font-family: $fontFamily;
-    margin-bottom: 2rem;
 
-    .container {
+    .container04 {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
@@ -54,7 +53,6 @@
 
     .circle {
         @include each-circle();
-
     }
 
     .sub-cont01 {
@@ -116,18 +114,25 @@
             height: 12rem;
         }
     }
+
 }
 
 
 @media screen and (min-width: 640px) {
     .container04 {
+        // width: 800px;
+
         .extra-container {
             @include each-circle();
         }
 
         .circle {
-            width: 9rem;
-            height: 9rem;
+            // width: 9rem;
+            // height: 9rem;
+            width: 90px;
+            height: 90px;
         }
+
+
     }
 }
