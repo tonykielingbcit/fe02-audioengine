@@ -1,6 +1,147 @@
-.container04 {
+@use "variables" as *;
 
-    
-
-    
+// mixin for all the circles
+@mixin each-circle {
+  background-size: cover;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
 }
+
+@mixin backgimg($image-path) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url($image-path);
+}
+
+.container04 {
+  // set the background color to see the slider button
+  background-color: gray;
+  //margin: 2rem;
+  // border: 2px solid red;
+  width: 100vw;
+  padding: 20px;
+  max-width: 1420px;
+  font-family: $fontFamily;
+
+  .carouselTK {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-items: center;
+    height: auto;
+    //width: 100%;
+
+    .circle {
+      @include each-circle();
+      .centered-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h3 {
+          font-size: 24px;
+          font-weight: 400;
+          color: white;
+          text-align: center;
+          line-height: 1;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  p {
+    font-size: 40px;
+    font-weight: 300;
+    text-align: left;
+    margin: 0;
+  }
+
+  .circle {
+    @include each-circle();
+  }
+
+  .sub-cont01 {
+    @include backgimg("../images/shop-slider-01-speaker-white.jpg");
+  }
+
+  .sub-cont02 {
+    @include backgimg("../images/shop-slider-02-speaker-brown.jpg");
+  }
+
+  .sub-cont03 {
+    @include backgimg("../images/shop-slider-03-speakers-brown.jpg");
+  }
+
+  .sub-cont04 {
+    @include backgimg("../images/shop-slider-04-speakers-brown.jpg");
+  }
+
+  .sub-cont05 {
+    @include backgimg("../images/shop-slider-05-speakers-brown.jpg");
+  }
+
+  .sub-cont06 {
+    @include backgimg("../images/shop-slider-06-speaker-brown.jpg");
+  }
+
+  .sub-cont07 {
+    @include backgimg("../images/shop-slider-07-speakers-white.jpg");
+  }
+
+  .sub-cont08 {
+    @include backgimg("../images/shop-slider-08-speakers-white.jpg");
+  }
+
+  .sub-cont09 {
+    @include backgimg("../images/shop-slider-09-speaker-brown.jpg");
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .container04 {
+    .carouselTK {
+      display: block;
+      .circle {
+        //   width: 10rem;
+        //   height: 10rem;
+      }
+      .extra-container {
+        display: none;
+      }
+    }
+  }
+}
+
+// @media screen and (min-width: 600px) {
+//   .container04 {
+//     .circle {
+//       width: 12rem;
+//       height: 12rem;
+//     }
+//   }
+// }
+
+// @media screen and (min-width: 640px) {
+//   .container04 {
+//     // width: 800px;
+
+//     .extra-container {
+//       @include each-circle();
+//     }
+
+//     .circle {
+//       // width: 9rem;
+//       // height: 9rem;
+//       width: 90px;
+//       height: 90px;
+//     }
+//   }
+// }
