@@ -18,14 +18,16 @@
 .container04 {
     margin: 2rem;
     // border: 2px solid red;
+    width: 100vw;
     font-family: $fontFamily;
 
-    .container04 {
+    .carouselTK {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
         margin-top: 2rem;
         justify-items: center;
+        width: 80%;
     }
 
     p {

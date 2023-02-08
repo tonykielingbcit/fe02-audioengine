@@ -14,20 +14,23 @@ const settings = {
 };
 
 $(document).ready(function ($) { 
-    const carousels = $(".carousel");
+    const carousels = $(".carouselTK");
     
     carousels.each(function() {
-      if ($(this).is("#container04")) {
+      if ($(this).is(".carouselTK")) {
         console.log("container04 carousel")
         $(window).resize(function() {
             console.log("resizing")
             if ($(window).width() >= 640 ) {
-                if ( !$(this).hasClass('slick-initialized'))
-                    return $(this).slick(settings);
+              console.log("turning slick ON: ", $(".carouselTK").hasClass('slick-initialized'))
+              if ( !$(".carouselTK").hasClass('slick-initialized')) {
+                $(".carouselTK").slick(settings);
+                return 
+              }
 
             } else {
-                if ($(this).hasClass('slick-initialized'))
-                    $(this).slick('unslick');
+              if ($(".carouselTK").hasClass('slick-initialized'))
+                $(this).slick('unslick');
                 return
             } 
 
