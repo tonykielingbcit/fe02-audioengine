@@ -1,12 +1,14 @@
 // Resets
 
 // Box Sizing Reset
-html {
+body {
     box-sizing: border-box;
 }
 
 *, *:before, *:after {
-    box-sizing: inherit;
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
 }
 
 // Image Reset

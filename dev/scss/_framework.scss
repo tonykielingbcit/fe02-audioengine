@@ -5,6 +5,8 @@ body {
   background-color: #303030;
   display: flex;
   justify-content: center;
+ 
+ overflow-x: hidden;
 
   .wrapper {
     display: grid;
@@ -14,7 +16,7 @@ body {
       "header"
       "main"
       "footer";
-    width: 100%;
+    width: 100vw;
     max-width: 1420px;
     background-color: white;
   }

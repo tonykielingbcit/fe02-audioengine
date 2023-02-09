@@ -1,16 +1,15 @@
 @use "variables" as var;
 
 .container01 {
+  // width: 100vw;
+   max-width: 1420px;
   width: 100vw;
-  max-width: 1420px;
-
   background-color: rgba(0, 0, 0, 0.1);
   font-family: var.$fontFamily;
-
   .banner-slide {
     margin: 0;
     overflow: hidden;
-    width: 100%;
+    //width: 100%;
     .slick-prev,
     .slick-next {
       z-index: 2;
