@@ -5,109 +5,110 @@ $font-size: 1em;
 $line-height: 2.2;
 
 @mixin flex-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-@mixin flex-row ($gap: 20px) {
-    display: flex;
-    flex-direction: row;
-    column-gap: $gap;
-    align-items: center;
+@mixin flex-row($gap: 20px) {
+  display: flex;
+  flex-direction: row;
+  column-gap: $gap;
+  align-items: center;
 }
 
 footer {
-    background-color: $body-bg-color;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: $text-color;
-    font-family: $fontFamily;
-    line-height: $line-height;
-    font-size: $font-size;
+  max-width: 1420px;
+  background-color: $body-bg-color;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: $text-color;
+  font-family: $fontFamily;
+  line-height: $line-height;
+  font-size: $font-size;
+  @include flex-column;
+
+  .footer-header {
+    padding: 15px 10%;
+    background-color: white;
+    height: 200px;
     @include flex-column;
-    
-    .footer-header {
-        padding: 15px 10%;
-        background-color: white;
-        height: 200px;
-        @include flex-column;
-        border-bottom: 1px solid black;
+    border-bottom: 1px solid black;
 
-        .footer-icons {
-            display: block;
-        }
-
-        .goto-top {
-            @include flex-row(5px);
-            color: $button-color;
-            a {
-                font-weight: bold;
-                text-decoration: none;
-                color: $button-color;
-            }
-        }
-
-        .social-media {
-            @include flex-row(10px);
-            width: 30%;
-        }
-    
-        .fa-brands {
-            color: black;
-            font-size: 2.5em;
-        }
-
-        .footer-email {
-            @include flex-row(10px);
-            i {
-                font-size: 2.5em;
-                color: black;
-            }
-        }
+    .footer-icons {
+      display: block;
     }
-    
-    .footer-body {
-        padding: 30px 10%;
-        display: grid;
-        height: 800px;
-        grid-template-columns: 1fr;
-        a {
-            text-decoration: none;
-            color: $text-color;
-            &:hover {
-                color: $button-color;
-            }
-        }
+
+    .goto-top {
+      @include flex-row(5px);
+      color: $button-color;
+      a {
+        font-weight: bold;
+        text-decoration: none;
+        color: $button-color;
+      }
     }
+
+    .social-media {
+      @include flex-row(10px);
+      width: 30%;
+    }
+
+    .fa-brands {
+      color: black;
+      font-size: 2.5em;
+    }
+
+    .footer-email {
+      @include flex-row(10px);
+      i {
+        font-size: 2.5em;
+        color: black;
+      }
+    }
+  }
+
+  .footer-body {
+    padding: 30px 10%;
+    display: grid;
+    height: 800px;
+    grid-template-columns: 1fr;
+    a {
+      text-decoration: none;
+      color: $text-color;
+      &:hover {
+        color: $button-color;
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: 340px) {
-    footer {
-        .footer-body {
-            height: 400px;
-            grid-template-columns: 1fr 1fr;
-        }
+  footer {
+    .footer-body {
+      height: 400px;
+      grid-template-columns: 1fr 1fr;
     }
+  }
 }
 
 @media only screen and (min-width: 568px) {
-    footer {
-        .footer-body {
-            height: 200px;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
+  footer {
+    .footer-body {
+      height: 200px;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+  }
 }
 
 @media only screen and (min-width: 670px) {
-    footer {
-        .footer-header {
-            height: 170px;
-            .footer-icons {
-                @include flex-row(50px);
-            }
-        }
+  footer {
+    .footer-header {
+      height: 170px;
+      .footer-icons {
+        @include flex-row(50px);
+      }
     }
+  }
 }
