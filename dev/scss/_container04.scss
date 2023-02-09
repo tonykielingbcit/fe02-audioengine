@@ -1,6 +1,175 @@
+@use "variables" as *;
+
+// mixin for all the circles
+@mixin each-circle {
+    background-size: cover;
+    width: 8rem;
+    height: 8rem;
+    height: auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin backgimg($image-path) {
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url($image-path);
+}
+
+@mixin arrow() {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-top: 7px solid $button-color;
+    border-right: 7px solid $button-color;
+    top: calc(50% - ((30px * 1.414px) / 2px));
+}
+
 .container04 {
-
+    padding: 2rem;
+    font-family: $fontFamily;
+    // border: 3px solid lime;
+    width: 100vw;
     
+    .wrapper04 {
+        border: 1px solid blue;
+        margin: auto;
+    }
 
-    
+    .carousel04 {
+        display: grid;
+        margin: auto;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin-top: 2rem;
+        justify-items: center;
+        width: 80%;
+    }
+
+    p {
+        font-size: 40px;
+        font-weight: 300;
+        text-align: left;
+        margin: 0;
+    }
+
+    .centered-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h3 {
+        font-size: 24px;
+        font-weight: 400;
+        color: white;
+        text-align: center;
+        line-height: 1;
+        margin: 0;
+        padding: 0;
+    }
+
+    .circle {
+        @include each-circle();
+    }
+
+    .sub-cont01 {
+        @include backgimg("../images/shop-slider-01-speaker-white.jpg");
+    }
+
+    .sub-cont02 {
+        @include backgimg("../images/shop-slider-02-speaker-brown.jpg");
+    }
+
+    .sub-cont03 {
+        @include backgimg("../images/shop-slider-03-speakers-brown.jpg");
+    }
+
+    .sub-cont04 {
+        @include backgimg("../images/shop-slider-04-speakers-brown.jpg");
+    }
+
+    .sub-cont05 {
+        @include backgimg("../images/shop-slider-05-speakers-brown.jpg");
+    }
+
+    .sub-cont06 {
+        @include backgimg("../images/shop-slider-06-speaker-brown.jpg");
+    }
+
+    .sub-cont07 {
+        @include backgimg("../images/shop-slider-07-speakers-white.jpg");
+    }
+
+    .sub-cont08 {
+        @include backgimg("../images/shop-slider-08-speakers-white.jpg");
+    }
+
+    .sub-cont09 {
+        @include backgimg("../images/shop-slider-09-speaker-brown.jpg");
+    }
+
+    .extra-container {
+        display: none;
+    }
+}
+
+
+@media screen and (min-width: 400px) {
+    .container04 {
+        .circle {
+            width: 10rem;
+            height: 10rem;
+        }
+    }
+}
+
+
+@media screen and (min-width: 500px) {
+    .container04 {
+        .circle {
+            width: 12rem;
+            height: 12rem;
+        }
+    }
+
+}
+
+
+@media screen and (min-width: 640px) {
+    .container04 {
+        margin: 0;
+        
+        .carousel04 {
+            display: block;
+            width: 90%;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+border: 2px solid red;
+        }
+        .slick-next::before, .slick-prev::before {
+            content: "";
+        }
+
+        .slick-next {
+            @include arrow();
+            transform: rotate(45deg);
+        }
+        .slick-prev {
+            @include arrow();
+            transform: rotate(-135deg);
+        }
+
+        .extra-container {
+            @include each-circle();
+        }
+
+        .circle {
+            width: auto;
+            height: auto;
+            aspect-ratio: 1;
+            margin: 0 1rem;
+        }
+
+    }
 }
