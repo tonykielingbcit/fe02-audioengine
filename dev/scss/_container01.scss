@@ -1,21 +1,148 @@
+@use "variables" as var;
+
 .container01 {
   width: 100vw;
-  height: 500px;
-  border: 2px solid blue;
-  padding: 20px;
+  max-width: 1420px;
+
   background-color: rgba(0, 0, 0, 0.1);
+  font-family: var.$fontFamily;
 
   .banner-slide {
-    width: 80%;
-    border: 2px solid green;
-    background-color: yellow;
-    color: black;
-
-    .slick-prev {
-      background-color: orange;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+    .slick-prev,
+    .slick-next {
+      z-index: 2;
+      i {
+        color: var.$button-color;
+        font-size: 2rem;
+      }
     }
+
+    // Arrow styles
+    .slick-prev {
+      left: 20px;
+    }
+    .slick-next {
+      right: 20px;
+    }
+    .slick-prev::before,
+    .slick-next::before {
+      content: "";
+    }
+
+    // Dots styles
     .slick-dots {
-      background-color: pink;
+      bottom: 30px;
+
+      li {
+        margin: 0 10px;
+      }
+
+      button {
+        width: 1rem;
+        height: 1rem;
+        padding: 10px;
+        border-radius: 100%;
+        background-color: var.$button-color;
+        text-indent: -9999px;
+        opacity: 0.3;
+      }
+
+      li.slick-active button {
+        opacity: 1;
+      }
+    }
+
+    .banner {
+      position: relative;
+      height: 100%;
+      img {
+        position: relative;
+        z-index: 1;
+      }
+      .sub-banner {
+        position: absolute;
+        width: 0;
+        z-index: 2;
+        top: 50px;
+        right: 0;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.7);
+        .title {
+          color: dimgray;
+          font-weight: 800;
+          text-transform: uppercase;
+          font-size: 3rem;
+        }
+        .sub-title {
+          color: dimgray;
+          font-size: 2rem;
+        }
+        .button {
+          border-radius: 5px;
+          border: none;
+          padding: 15px 20px;
+          margin-top: 30px;
+          background-color: var.$button-color;
+          color: white;
+          text-transform: uppercase;
+          font-weight: 800;
+        }
+      }
+    }
+  }
+  @media (max-width: 668px) {
+    .sub-banner {
+      display: none;
+    }
+  }
+
+  @media (min-width: 668px) {
+    .banner-slide {
+      .banner {
+        .sub-banner {
+          width: 400px;
+          .title {
+            font-size: 2rem;
+          }
+          .sub-title {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 850px) {
+    .banner-slide {
+      .banner {
+        .sub-banner {
+          width: 500px;
+          .title {
+            font-size: 2.8rem;
+          }
+          .sub-title {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    .banner-slide {
+      .banner {
+        .sub-banner {
+          width: 600px;
+          .title {
+            font-size: 3.5rem;
+          }
+          .sub-title {
+            font-size: 2rem;
+          }
+        }
+      }
     }
   }
 }
