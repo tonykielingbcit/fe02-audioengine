@@ -4,7 +4,7 @@
 $font-size: 1em;
 $line-height: 2.2;
 
-@mixin button-style {
+@mixin button-style-06 {
     background-color: white;
     border: none;
     border-radius: 5px;
@@ -16,6 +16,12 @@ $line-height: 2.2;
     position: relative;
     font-family: $fontFamily;
     color: white;
+
+    picture {
+        img {
+            display: block;
+        }
+    }
 
     .overlay {
         background-color: rgba(0, 0, 0, 0.5);
@@ -31,28 +37,23 @@ $line-height: 2.2;
             top: 0;
             left: 0;
             width: 70%;
-
             h2 {
                 margin: 0;
                 font-size: 2em;
                 font-weight: 400;
             }
-
             p {
                 font-size: 1em;
                 margin-top: 0;
                 margin-bottom: 20px;
             }
-
             .learn-more-button {
-                @include button-style;
+                @include button-style-06;
                 width: 120px;
                 &:hover {
                     color: $button-color;
                 }
-
-            }
-                
+            }     
         }
     }
 }
@@ -79,14 +80,11 @@ $line-height: 2.2;
         .overlay {
             height: 170px;
             width: 40%;
-
             .overlay-text {
                 margin-top: auto;
-
                 h2 {
                     font-size: 2.6em;
                 }
-    
                 p {
                     font-size: 1.4em;
                     margin-top: 0;
@@ -97,19 +95,15 @@ $line-height: 2.2;
     }
 }
 
-
 @media only screen and (min-width: 1024px) {
     .container06 {
         .overlay {
             height: 190px;
             width: 40%;
-
             .overlay-text {
-
                 h2 {
                     font-size: 3em;
                 }
-    
                 p {
                     font-size: 1.8em;
                 }
@@ -122,17 +116,6 @@ $line-height: 2.2;
     .container06 {
         .overlay {
             width: 35%;
-
-            .overlay-text {
-
-                h2 {
-                    font-size: 3em;
-                }
-    
-                p {
-                    font-size: 1.8em;
-                }
-            }
         }
     }
 }
