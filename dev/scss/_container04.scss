@@ -147,6 +147,10 @@
             margin-bottom: 1.5rem;
 border: 2px solid red;
         }
+        .slick-next::before, .slick-prev::before {
+            content: "";
+        }
+
         .slick-next {
             @include arrow();
             transform: rotate(45deg);
