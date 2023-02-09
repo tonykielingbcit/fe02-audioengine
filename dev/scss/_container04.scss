@@ -28,7 +28,7 @@
 .container04 {
     padding: 2rem;
     font-family: $fontFamily;
-    // border: 3px solid lime;
+    max-width: 1420px;
     width: 100vw;
     
     .wrapper04 {
@@ -145,7 +145,6 @@
             width: 90%;
             margin-top: 1.5rem;
             margin-bottom: 1.5rem;
-border: 2px solid red;
         }
         .slick-next::before, .slick-prev::before {
             content: "";
