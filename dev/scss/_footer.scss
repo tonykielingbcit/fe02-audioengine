@@ -52,13 +52,26 @@ footer {
 
     .social-media {
       @include flex-row(10px);
-      width: 30%;
+      width: 300px;
+      padding-bottom: 10px;
     }
 
     .fa-brands {
-      color: black;
-      font-size: 2.5em;
+      color: white;
+      font-size: 1.4em;
     }
+
+    .circle {
+      width: 40px;
+      height: 40px;
+      background-color: black;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 8px;
+      border-radius: 50%;
+   }
 
     .footer-email {
       @include flex-row(10px);
@@ -108,7 +121,13 @@ footer {
       height: 170px;
       .footer-icons {
         @include flex-row(50px);
+        justify-content: space-between;
       }
+    }
+    .footer-email {
+      align-items: right;
+      padding-bottom: 10px;
     }
   }
 }
+
