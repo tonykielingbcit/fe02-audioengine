@@ -25,6 +25,13 @@
     top: calc(50% - ((30px * 1.414px) / 2px));
 }
 
+
+.slick-initialized .slick-slide {
+    display: flex;
+}
+
+
+
 .container04 {
    // width: 100%;
     padding: 2rem;
