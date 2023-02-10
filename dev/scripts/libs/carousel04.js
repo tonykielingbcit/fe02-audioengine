@@ -6,22 +6,13 @@ const container04Settings = {
   responsive: [
     {
       //size 801px~1000px
-      breakpoint: 1000,
+      breakpoint: 1200,
       settings: {
         slidesToShow: 4,
         slidesToScroll: 1,
         infinite: true,
       },
     },
-    // {
-    //   //size 601px ~ 800px
-    //   breakpoint: 900,
-    //   settings: {
-    //     slidesToShow: 4,
-    //     slidesToScroll: 1,
-    //     infinite: true,
-    //   },
-    // },
     {
       // size 641px ~ 700px
       breakpoint: 800,
@@ -32,7 +23,7 @@ const container04Settings = {
       },
     },
     {
-      breakpoint: 640,
+      breakpoint: 450,
       settings: "unslick",
     },
   ],
@@ -45,7 +36,7 @@ $(document).ready(function () {
     // if ($(window).width() >= 640 ) {
     // "Note that $(window).width() is not consistent across browsers if the scrollbar is visible. I've found that using javascript media queries is much more reliable.""
     // https://stackoverflow.com/questions/7715124/do-something-if-screen-width-is-less-than-960-px
-    if (window.innerWidth >= 640) {
+    if (window.innerWidth >= 450) {
       // console.log("wwwwwwwwwwwwwwwwww", $(window).width());
       // this print demonstrates the width is not matching, as the so mentioned
       if (!$(".carousel04").hasClass("slick-initialized")) {
@@ -59,7 +50,7 @@ $(document).ready(function () {
 });
 
 // When the page is loaded initially
-if (window.matchMedia("(max-width: 640px)").matches) {
+if (window.matchMedia("(max-width: 450px)").matches) {
   if ($(".carousel04").hasClass("slick-initialized")) {
     $(".carousel04").slick("unslick");
   }
