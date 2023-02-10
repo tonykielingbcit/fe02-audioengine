@@ -4,12 +4,12 @@
 @mixin each-circle {
     background-size: cover;
     width: 8rem;
-    height: 8rem;
     height: auto;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    aspect-ratio: 1;
 }
 
 @mixin backgimg($image-path) {
@@ -26,15 +26,9 @@
 }
 
 .container04 {
+   // width: 100%;
     padding: 2rem;
     font-family: $fontFamily;
-    max-width: 1420px;
-    width: 100vw;
-    
-    .wrapper04 {
-        border: 1px solid blue;
-        margin: auto;
-    }
 
     .carousel04 {
         display: grid;
@@ -42,6 +36,7 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
         margin-top: 2rem;
+        justify-content: center;
         justify-items: center;
         width: 80%;
     }
@@ -131,6 +126,7 @@
             width: 12rem;
             height: 12rem;
         }
+
     }
 
 }
@@ -139,7 +135,9 @@
 @media screen and (min-width: 640px) {
     .container04 {
         margin: 0;
-        
+        p {
+            text-align: center;
+        }
         .carousel04 {
             display: block;
             width: 90%;

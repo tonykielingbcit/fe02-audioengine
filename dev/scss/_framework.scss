@@ -14,7 +14,7 @@ body {
       "header"
       "main"
       "footer";
-    width: 100%;
+   width: 100%;
     max-width: 1420px;
     background-color: white;
   }
@@ -24,7 +24,9 @@ body {
   }
 
   main {
+    width: inherit;
     grid-area: main;
+    overflow: hidden;
   }
 
   footer {

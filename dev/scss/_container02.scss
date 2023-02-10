@@ -9,7 +9,7 @@
 }
 
 .container02 {
-  max-width: 1420px;
+  //max-width: 1420px;
   .video * {
     padding: 0;
     margin: 0;
@@ -33,10 +33,12 @@
       position: absolute;
       color: var.$button-color;
       border: none;
-      font-size: 8rem;
+      font-size: 12vw;
+
       cursor: pointer;
       background-color: transparent;
       z-index: 3;
+
     }
     img {
       width: 100%;
@@ -62,8 +64,8 @@
 
         .close-btn {
           position: absolute;
-          top: 0;
-          right: 0;
+          top: -10px;
+          right: -10px;
           cursor: pointer;
           background-color: black;
           border: none;
@@ -79,7 +81,10 @@
           border: 2px solid skyblue;
 
           video {
+            display: block;
             width: 100%;
+            height: auto;
+            padding: 1px;
           }
         }
       }
@@ -89,9 +94,6 @@
     .video {
       .title {
         font-size: 3rem;
-      }
-      .play {
-        font-size: 15rem;
       }
     }
   }

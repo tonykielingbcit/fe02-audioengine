@@ -5,6 +5,7 @@ $font-size: 1em;
 $line-height: 2.2;
 
 @mixin button-style-06 {
+
   background-color: white;
   border: none;
   border-radius: 5px;
@@ -16,8 +17,7 @@ $line-height: 2.2;
   position: relative;
   font-family: $fontFamily;
   color: white;
-  max-width: 1420px;
-
+ 
   picture {
     img {
       display: block;
