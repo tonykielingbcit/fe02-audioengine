@@ -3,13 +3,12 @@
 body {
   min-height: 100vh;
   background-color: #303030;
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
 
   .wrapper {
     display: grid;
-    grid-template: auto auto 2fr / 1fr;
-    //grid-template: $header-height auto 2fr / 1fr;
+    grid-template: auto auto auto / 1fr;
     grid-template-areas:
       "header"
       "main"
