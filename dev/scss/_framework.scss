@@ -5,6 +5,7 @@ body {
   background-color: #303030;
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
 
   .wrapper {
     display: grid;
